@@ -11,7 +11,7 @@
 
 ---
 
-## ***STEPS TO FOLLOW BEFORE USE THE API***
+## ***STEPS TO FOLLOW BEFORE OPEN THE PAGE***
 1. First follow the instructions in the API-Practice (Where there it is the API)
 2. Unzip the project
 3. Open the file interface.html
