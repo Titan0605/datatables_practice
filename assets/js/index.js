@@ -19,9 +19,9 @@ function initializeDataTable() {
       { data: "publisher" },
       {
         data: "release_date",
-        render: function (data) {
+/*         render: function (data) {
           return new Date(data).toLocaleDateString();
-        },
+        }, */
       },
       {
         data: "price",
@@ -52,16 +52,26 @@ function initializeDataTable() {
         data: null,
         render: function (data, type, row) {
           return `
-                        <button onclick="editarRegistro(${row.id_videogame})" class="button">
-                            Editar
-                        </button>
-                        <button onclick="eliminarRegistro(${row.id_videogame})" class="button">
-                            Eliminar
-                        </button>
-                    `;
+            <button type="button" onclick="editarRegistro(${row.id_videogame})" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editModal">
+              <i class="fa-duotone fa-solid fa-pen text-dark"></i>
+            </button>
+            <button type="button" onclick="eliminarRegistro(${row.id_videogame})" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal">
+              <i class="fa-duotone fa-regular fa-trash-can "></i>
+            </button>
+          `;
         },
       },
     ],
+    columnDefs: [
+      {width: "15%", target: [1,8,9]},
+      {width: "5%", target: [2,3,4,6,7]},
+      {width: "1%", target: [0,5,10]},
+      {
+        targets: [0,4,5,6,7,8,9,10],
+        className: 'text-center',
+      }
+    ],
+    responsive: true
     // pageLength: 10,
     // order: [[0, 'desc']]
   });
