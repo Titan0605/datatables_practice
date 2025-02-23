@@ -109,6 +109,7 @@ function initializeInsertForm() { //function to make the POST to the API and ADD
       };
 
       fetch("http://apipractice.com/videogames/", { //calling the api with the URI and specifyng the method POST
+          method: 'POST',
           headers: {
               "Content-Type": "application/json"
           },
